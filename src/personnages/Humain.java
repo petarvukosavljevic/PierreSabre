@@ -35,7 +35,7 @@ public class Humain {
 		this.argent += gain;
 	}
 	
-	public void perderArgent(int perte) {
+	public void perdreArgent(int perte) {
 		this.argent -= perte;
 	}
 	
@@ -44,7 +44,7 @@ public class Humain {
 			parler("Je n'ai plus que " + this.argent + " sous en poche. Je ne peux meme pas m'offrir " + bien + " a " + prix + " sous.");
 		} else {
 			parler("J'ai " + this.argent + " sous en poche. Je vais pouvoir m'offrir " + bien + " a " + prix + " sous.");
-			this.perderArgent(prix);
+			this.perdreArgent(prix);
 		}
 	}
 }
