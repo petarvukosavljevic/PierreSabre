@@ -1,6 +1,6 @@
 package personnages;
 
-public class Samourai extends Humain {
+public class Samourai extends Ronin {
 	private String seigneur;
 	
 	public Samourai(String seigneur, String nom, String boissonFavorite, int argent) {
@@ -14,7 +14,7 @@ public class Samourai extends Humain {
 
 	@Override
 	public void direBonjour() {
-		this.parler("Bonjour ! Je m'appelle " + this.getNom() + " et j'aime boire du " + this.getBoissonFavorite() + ".");
+		super.direBonjour();
 		this.parler("Je suis fier de servir le seigneur " + this.seigneur);
 	}
 	

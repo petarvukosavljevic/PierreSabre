@@ -15,7 +15,7 @@ public class Traitre extends Samourai {
 	public void direBonjour() {
 		this.parler("Bonjour ! Je m'appelle " + this.getNom() + " et j'aime boire du " + this.getBoissonFavorite() + ".");
 		this.parler("Je suis fier de servir le seigneur " + this.getSeigneur());
-		this.parler("Mais je suis un traître et mon niveau de traîtrise est : " + this.niveauTraitrise + " Chut !");
+		this.parler("Mais je suis un traï¿½tre et mon niveau de traï¿½trise est : " + this.niveauTraitrise + " Chut !");
 	} 
 	
 	public void ranconner(Commercant commercant) {
@@ -25,10 +25,10 @@ public class Traitre extends Samourai {
 			commercant.perdreArgent(argentRanconner);
 			this.gagnerArgent(argentRanconner);
 			this.niveauTraitrise++;
-			this.parler("Si tu veux ma protection contre les Yakuzas, il va falloir payer ! Donne-moi" + argentRanconner + " sous ou gare à toi !");
+			this.parler("Si tu veux ma protection contre les Yakuzas, il va falloir payer ! Donne-moi" + argentRanconner + " sous ou gare ï¿½ toi !");
 			commercant.parler("Tout de suite grand" + this.getNom() + ".");
 		} else {
-			this.parler("Mince je ne peux plus rançonner personne sinon un samouraï risque de me démasquer !");
+			this.parler("Mince je ne peux plus ranï¿½onner personne sinon un samouraï¿½ risque de me dï¿½masquer !");
 		}
 	}
 	
@@ -43,8 +43,12 @@ public class Traitre extends Samourai {
 			String nomAmi = randAmi.getNom();
 			this.parler("Il faut absolument remonter ma cote de confiance. Je vais faire ami ami avec" + nomAmi + ".");
 			this.parler("Bonjour l'ami ! Je voudrais vous aider en vous donnant " + don + " sous.");
+			randAmi.gagnerArgent(don);
 			this.perdreArgent(don);
-			
+			randAmi.parler("Merci " + this.getNom() + " Vous etes quelqu'un de bien.");
+			if (niveauTraitrise > 1) {
+				this.niveauTraitrise--;
+			}
 		}
 	}
 }
